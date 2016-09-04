@@ -1,0 +1,9 @@
+<div id="results">
+  <p>Transaction ID: <%= @transaction.id %></p>
+
+  <p>Amount : £ <%= sprintf('%.2f', @transaction.amount) %><br></p>
+
+  <form>
+    <button formaction="/transaction/<%=@transaction.id%>/delete">Delete</button>
+  </form><br>
+</div>

@@ -1,0 +1,21 @@
+
+<div id="subhead">
+  <h2>All Merchants</h2>
+</div>
+
+<div id="hmenu">
+  <ul>
+    <li><a href="/merchant/new">Add new merchant</a></li>
+  </ul>
+</div>
+
+<div id="results">
+  <% @merchants.each do |merchant| %>
+  Name: <%= merchant.name %><br>
+
+  <form>
+    <button formaction="/merchant/<%=merchant.id%>">View</button>
+  </form>
+  <hr>
+  <% end %>
+</div>

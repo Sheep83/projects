@@ -1,0 +1,33 @@
+<h2>Add Transaction</h2>
+
+<div id="results">
+  <form action="/transaction" method="post">
+    <label for="account">Select an Account:</label>
+    <select name = "account_id">
+      <% @accounts.each do |account| %>
+      <option value="<%= account.id %>"><%= account.type %></option>
+      <% end %>
+    </select>
+    <hr>
+    <label for="merchant">Select a Merchant:</label>
+    <select name = "merchant_id">
+      <% @merchants.each do |merchant| %>
+      <option value="<%= merchant.id %>"><%= merchant.name %></option>
+      <% end %>
+    </select>
+    <hr>
+    <label for="tag">Select a Tag:</label>
+    <select name = "tag_id">
+      <% @tags.each do |tag| %>
+      <option value="<%= tag.id %>"><%= tag.name %></option>
+      <% end %>
+    </select>
+    <hr>
+    <label for="amount">Amount: £</label>
+    <input type="text" name="amount">  <input type='submit' value="Add Transaction!">
+  </form>
+</div>
+
+<br>
+
+

@@ -1,0 +1,26 @@
+<div class="subhead">
+<h2>Balance Transfer</h2>
+</div>
+<div id="results">
+<form action="/account/transfer" method="post">
+<label for="account1">Select an Account to debit :</label>
+<select name = "account1">
+  <% @accounts.each do |account| %>
+  <option value="<%= account.id %>"><%= account.type %></option>
+  <% end %>
+</select>
+<hr>
+<label for="account2">Select an Account to credit :</label>
+<select name = "account2">
+  <% @accounts.each do |account| %>
+  <option value="<%= account.id %>"><%= account.type %></option>
+  <% end %>
+</select>
+<hr>
+  <label for="amount">Amount to transfer: £</label>
+  <input type="decimal" name="amount"><br>
+  <input type='submit' value="Transfer Funds!">
+</form>
+</div>
+<br>
+

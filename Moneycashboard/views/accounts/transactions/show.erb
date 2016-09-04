@@ -1,0 +1,18 @@
+<h2>All Transactions for account <%=@account.type%></h2>
+
+<div id="results">
+  <% @accounts.each do |account| %>
+  Account Type: <%= account['type'] %><br>
+  Merchant : <%= account['name'] %><br>
+  Amount: £ <%= sprintf('%.2f', account['amount'].to_f) %><br>
+  <form>
+    <button formaction="/transaction/<%=account['id']%>">View</button>
+  </form>
+  <hr>
+  <% end %>
+</div>
+<div id="total">
+  Total: £ <%= sprintf('%.2f', @total)%><br>
+</div>
+
+

@@ -1,0 +1,7 @@
+<p>Transaction ID: <%= @transaction.id %></p>
+
+<p>Amount: <%= @transaction.amount %><br></p>
+
+<form>
+  <button formaction="/transaction/<%=@transaction.id%>/delete">Delete</button>
+</form><br>

@@ -1,0 +1,10 @@
+
+<div id="results">
+  <p>Type: <%= @account.type %><br></p>
+
+  <p>Balance : £ <%= sprintf('%.2f', @account.balance.to_f) %><br></p>
+  <form>
+    <button formaction="/account/<%=@account.id%>/transactions">Transactions</button>
+  </form><br>
+</div>
+

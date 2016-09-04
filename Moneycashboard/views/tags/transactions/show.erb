@@ -1,0 +1,15 @@
+<h2>All Transactions for tag <%=@tag.name%></h2>
+
+<div id="results">
+  <% @transactions.each do |transaction| %>
+  Merchant : <%= transaction['name'] %><br>
+  Account : <%= transaction['type'] %><br>
+  Amount : £ <%= sprintf('%.2f', transaction['amount'].to_f) %><br>
+  <hr>
+  <% end %>
+</div>
+<div id="total">
+  Total: £ <%= sprintf('%.2f', @total) %><br>
+</div>
+<hr>
+

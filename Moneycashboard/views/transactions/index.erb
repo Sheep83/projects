@@ -1,0 +1,30 @@
+<div id="subhead">
+  <h2>All Transactions</h2>
+</div>
+
+<div id="hmenu">
+  <ul>
+    <li><a href="/transaction/new">Add new transaction</a></li>
+  </ul>
+</div>
+
+<div id="results">
+  <% @transactions.each do |transaction| %>
+  Account Type : <%= transaction['type'] %><br>
+  Merchant : <%= transaction['name'] %><br>
+  Amount: £ <%= sprintf('%.2f', transaction['amount'].to_f) %><br>
+  <form>
+    <button formaction="/transaction/<%=transaction['id']%>">View</button>
+  </form> 
+  <form>
+    <button formaction="/transaction/<%=transaction['id']%>/delete">Delete</button>
+  </form>
+  <hr>
+  <% end %>
+
+</div>
+<div id="total">
+  Total : £ <%= sprintf('%.2f', @total.to_f) %>
+</div>
+
+

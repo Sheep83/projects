@@ -1,0 +1,9 @@
+<div id="results">
+  <p>Tag ID: <%= @tag.id %></p>
+
+  <p>Tag Name: <%= @tag.name %><br></p>
+
+  <form>
+    <button formaction="/tag/<%=@tag.id%>/transactions">Transactions</button>
+  </form><br>
+</div>

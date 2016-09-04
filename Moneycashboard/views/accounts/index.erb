@@ -1,0 +1,29 @@
+<div id="subhead">
+  <h2>All Accounts</h2>
+</div>
+
+
+<div id="hmenu">
+  <ul>
+    <li><a href="/account/new">Add new account</a></li>
+    <li><a href="/account/transfer">Balance Transfer</a></li>
+  </ul>
+</div>
+
+<div id="results">
+  <% @accounts.each do |account| %>
+  Type : <%= account.type %><br>
+  Balance : £ <%= sprintf('%.2f', account.balance) %><br>
+  <form>
+    <button formaction="/account/<%=account.id%>">View</button>
+  </form>
+  <hr>
+  <% end %>
+  </div>
+<% @total = 0 %>
+<% @accounts.each do |account| %>
+<% @total = @total += account.balance %>
+<% end %>
+<div id = "total">
+Total available funds : £ <%= sprintf('%.2f', @total.to_f) %>
+</div>
